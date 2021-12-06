@@ -17,6 +17,46 @@ function dwnld(url){
     })
     .catch(() => alert('oh no!'));
 }
+function open_win(url,author,permalink){
+    let title="69";
+    let output=`
+    <div class="modal-content">
+    <div id="btm">
+            
+    <div>
+    Posted by u/${author}. 
+        <a href="https://www.reddit.com${permalink}" target="_blank">
+            Go upvote!
+        </a>
+    </div>
+
+        <span id="close">&times;</span>
+
+    
+        </div>
+        <div>
+            <img src="${url}">
+
+        </div>
+        
+    </div>
+    `
+    let modal=document.getElementById('myModal');
+    modal.innerHTML=output;
+    modal.style.display='block';
+    document.getElementById('close').addEventListener('click',()=>{
+        modal.innerHTML="";
+        modal.style.display="none";
+    })
+    
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.innerHTML="";
+            modal.style.display = "none";
+        }
+    } 
+    
+}
 function load_posts(url){
     fetch(url)
     .then((res)=>res.json())
@@ -27,24 +67,15 @@ function load_posts(url){
         );
         let output=""
         posts.forEach((post)=>{
-            console.log(post.data.url,typeof(post.data.url));
-            output+=`<div class="post" onclick="console.log('${post.data.url}')">
+            console.log(post.data.title,typeof(post.data.title));
+            output+=`<div class="post" onclick="open_win('${post.data.url}','${post.data.author}','${post.data.permalink}')">
             <img class="pic" src="${post.data.url}">
             
             </div>`;
             // document.addEventListener('click',()=>console.log('clicked'));
             
             //paste it inside post
-            // <p> 
-            //             <a href="https://www.reddit.com${post.data.permalink}"
-            //             target="_blank">
-            //             ${post.data.title}
-            //         </a>
-            //         Posted by ${post.data.author}
-            //         </p>
-            //     <button class="btn" onclick="dwnld('${post.data.url}')">
-            //         Download
-            //     </button>
+            // 
             
             
         });
