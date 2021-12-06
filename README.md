@@ -1,2 +1,4 @@
 # reddit_wallpapers
-Website shwoing top weekly wallpapers from reddit.com/r/wallpapers
+https://reddit-wallpapers.herokuapp.com/
+
+Website showing top weekly wallpapers from reddit.com/r/wallpapers
