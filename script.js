@@ -1,5 +1,5 @@
 let next=0,prev=0;
-let main_url="https://www.reddit.com/r/wallpapers/top.json?t=week&limit=24"
+let main_url="https://www.reddit.com/r/wallpaper+wallpapers/top.json?t=week&limit=24"
 function dwnld(url){
     fetch(url)
     .then(resp => resp.blob())
