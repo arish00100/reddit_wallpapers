@@ -31,7 +31,7 @@ function open_win(url,author,permalink){
         </a>
     </div>
 
-        <span id="close">&times;</span>
+        <span class="close">&times;</span>
 
     
         </div>
@@ -45,7 +45,7 @@ function open_win(url,author,permalink){
     let modal=document.getElementById('myModal');
     modal.innerHTML=output;
     modal.style.display='block';
-    document.getElementById('close').addEventListener('click',()=>{
+    document.getElementsByClassName('close')[0].addEventListener('click',()=>{
         modal.innerHTML="";
         modal.style.display="none";
     })
