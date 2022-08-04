@@ -69,6 +69,7 @@ body{
         max-height: 300px;       /*720px*/
         max-width: 450px;        /*1280 px*/
         transition: transform .1s;
+        cursor : pointer;
         /* border:1px solid white; */
     }
     .pic:hover{
